@@ -1,0 +1,15 @@
+.main-menu {
+  text-align: center;
+}
+
+.main-menu nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.main-menu nav ul li {
+  display: inline;
+  margin: 0 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}

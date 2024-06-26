@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState } from "react";
+import MainMenu from "./components/MainMenu";
+import RoomManagement from "./components/RoomManagement";
+import GuestManagement from "./components/GuestManagement";
+import ReservationManagement from "./components/ReservationManagement";
+import EmployeeManagement from "./components/EmployeeManagement";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [section, setSection] = useState("main");
+
+  let content;
+  switch (section) {
+    case "rooms":
+      content = <RoomManagement setSection={setSection} />;
+      break;
+    case "guests":
+      content = <GuestManagement setSection={setSection} />;
+      break;
+    case "reservations":
+      content = <ReservationManagement setSection={setSection} />;
+      break;
+    case "employees":
+      content = <EmployeeManagement setSection={setSection} />;
+      break;
+    default:
+      content = <MainMenu setSection={setSection} />;
+  }
+
+  return <div className="App">{content}</div>;
 }
 
 export default App;
