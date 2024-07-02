@@ -2,14 +2,39 @@
   text-align: center;
 }
 
-.main-menu nav ul {
-  list-style: none;
-  padding: 0;
+.main-menu-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
-.main-menu nav ul li {
-  display: inline;
-  margin: 0 10px;
+.menu-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #f19c79;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  text-decoration: underline;
+  transition: background-color 0.3s ease;
 }
+
+.menu-button:hover {
+  background-color: #a44a3f; /* Background color on hover */
+}
+
+.menu-button:active {
+  background-color: #a44a3f; /* Background color on click */
+}
+
+/* colors 
+D4E09B
+F6F4D2
+CBDFBD
+F19C79
+A44A3F
+*/

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import "./GuestManagement.css";
+import "../styles/GuestManagement.css";
 
 class Guest {
   constructor(id, firstName, lastName, email) {
@@ -123,18 +123,33 @@ const GuestManagement = ({ setSection }) => {
 
   return (
     <div className="guest-management">
+      <h1>Hotel Pochacco Management System</h1>
       <h2>Guest Management</h2>
-      <div>
-        <button onClick={() => setSection("addNewGuest")}>Add New Guest</button>
-        <button onClick={() => setSection("showAllGuests")}>
-          Show All Guests
-        </button>
-        <button onClick={() => setSection("searchGuestByName")}>
-          Search Guest by Name
-        </button>
-        <button onClick={() => setSection("editGuest")}>Edit Guest Data</button>
-      </div>
-
+      <nav>
+        <ul>
+          <li
+            className="choice-button"
+            onClick={() => setSection("addNewGuest")}
+          >
+            Add New Guest
+          </li>
+          <li
+            className="choice-button"
+            onClick={() => setSection("showAllGuests")}
+          >
+            Show All Guests
+          </li>
+          <li
+            className="choice-button"
+            onClick={() => setSection("searchGuestByName")}
+          >
+            Search Guest by Name
+          </li>
+          <li className="choice-button" onClick={() => setSection("editGuest")}>
+            Edit Guest Data
+          </li>
+        </ul>
+      </nav>
       {setSection === "addNewGuest" && (
         <div>
           <h3>Add New Guest</h3>
@@ -162,7 +177,6 @@ const GuestManagement = ({ setSection }) => {
           <button onClick={addNewGuest}>Add Guest</button>
         </div>
       )}
-
       {setSection === "showAllGuests" && (
         <div>
           <h3>Show All Guests</h3>
@@ -177,7 +191,6 @@ const GuestManagement = ({ setSection }) => {
           </ul>
         </div>
       )}
-
       {setSection === "searchGuestByName" && (
         <div>
           <h3>Search Guest by Name</h3>
@@ -198,7 +211,6 @@ const GuestManagement = ({ setSection }) => {
           <button onClick={searchGuestByName}>Search Guest</button>
         </div>
       )}
-
       {setSection === "editGuest" && (
         <div>
           <h3>Edit Guest Data</h3>
@@ -233,8 +245,11 @@ const GuestManagement = ({ setSection }) => {
           <button onClick={editGuestData}>Edit Guest</button>
         </div>
       )}
-
-      <button onClick={() => setSection("main")}>Back to Main Menu</button>
+      <ul>
+        <li className="main-menu-button" onClick={() => setSection("main")}>
+          Back to Main Menu
+        </li>
+      </ul>
     </div>
   );
 };

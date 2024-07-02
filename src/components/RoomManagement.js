@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import "./RoomManagement.css";
+import "../styles/RoomManagement.css";
 
 class Room {
   constructor(id, floor, capacity, description, price) {
@@ -101,14 +101,34 @@ const RoomManagement = ({ setSection }) => {
 
   return (
     <div className="room-management">
+      <h1>Hotel Pochacco Management System</h1>
       <h2>Room Management</h2>
-      <div>
-        <button onClick={() => setSection("addNewRoom")}>Add New Room</button>
-        <button onClick={() => setSection("showAllRooms")}>
-          Show All Rooms
-        </button>
-        <button onClick={() => setSection("editRoom")}>Edit Room Data</button>
-      </div>
+
+      <img
+        src={`${process.env.PUBLIC_URL}/images/hotel-room.jpg`}
+        alt="Hotel Room"
+        className="room-image"
+      />
+
+      <nav>
+        <ul>
+          <li
+            className="choice-button"
+            onClick={() => setSection("addNewRoom")}
+          >
+            Add New Room
+          </li>
+          <li
+            className="choice-button"
+            onClick={() => setSection("showAllRooms")}
+          >
+            Show All Rooms
+          </li>
+          <li className="choice-button" onClick={() => setSection("editRoom")}>
+            Edit Room Data
+          </li>
+        </ul>
+      </nav>
 
       {setSection === "addNewRoom" && (
         <div>
@@ -202,7 +222,11 @@ const RoomManagement = ({ setSection }) => {
         </div>
       )}
 
-      <button onClick={() => setSection("main")}>Back to Main Menu</button>
+      <ul>
+        <li className="main-menu-button" onClick={() => setSection("main")}>
+          Back to Main Menu
+        </li>
+      </ul>
     </div>
   );
 };

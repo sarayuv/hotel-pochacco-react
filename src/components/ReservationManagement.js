@@ -92,21 +92,35 @@ const ReservationManagement = ({ guests, rooms, reservations, setSection }) => {
 
   return (
     <div className="reservation-management">
+      <h1>Hotel Pochacco Management System</h1>
       <h2>Reservation Management</h2>
       <div>
-        <button onClick={() => setSection("createReservation")}>
-          Create Reservation
-        </button>
-        <button onClick={() => setSection("showAllReservations")}>
-          Show All Reservations
-        </button>
-        <button onClick={() => setSection("editReservation")}>
-          Edit Reservation
-        </button>
-        <button onClick={() => setSection("payReservation")}>
-          Pay Reservation
-        </button>
-        <button onClick={() => setSection("main")}>Back to Main Menu</button>
+        <ul>
+          <li
+            className="choice-button"
+            onClick={() => setSection("createReservation")}
+          >
+            Create Reservation
+          </li>
+          <li
+            className="choice-button"
+            onClick={() => setSection("showAllReservations")}
+          >
+            Show All Reservations
+          </li>
+          <li
+            className="choice-button"
+            onClick={() => setSection("editReservation")}
+          >
+            Edit Reservation
+          </li>
+          <li
+            className="choice-button"
+            onClick={() => setSection("payReservation")}
+          >
+            Pay Reservation
+          </li>
+        </ul>
       </div>
 
       {setSection === "createReservation" && (
@@ -152,7 +166,11 @@ const ReservationManagement = ({ guests, rooms, reservations, setSection }) => {
         </div>
       )}
 
-      {/* Add other sections based on setSection value */}
+      <ul>
+        <li className="main-menu-button" onClick={() => setSection("main")}>
+          Back to Main Menu
+        </li>
+      </ul>
     </div>
   );
 };
