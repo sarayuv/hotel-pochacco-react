@@ -1,33 +1,33 @@
-import "./App.css";
 import React, { useState } from "react";
-import MainMenu from "./components/MainMenu";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import RoomManagement from "./components/RoomManagement";
-import GuestManagement from "./components/GuestManagement";
-import ReservationManagement from "./components/ReservationManagement";
-import EmployeeManagement from "./components/EmployeeManagement";
+import AddNewRoom from "./components/AddNewRoom";
+import ShowAllRooms from "./components/ShowAllRooms";
+import EditRoom from "./components/EditRoom";
+import "./App.css";
 
-function App() {
-  const [section, setSection] = useState("main");
+const App = () => {
+  const [rooms, setRooms] = useState([]);
 
-  let content;
-  switch (section) {
-    case "rooms":
-      content = <RoomManagement setSection={setSection} />;
-      break;
-    case "guests":
-      content = <GuestManagement setSection={setSection} />;
-      break;
-    case "reservations":
-      content = <ReservationManagement setSection={setSection} />;
-      break;
-    case "employees":
-      content = <EmployeeManagement setSection={setSection} />;
-      break;
-    default:
-      content = <MainMenu setSection={setSection} />;
-  }
-
-  return <div className="App">{content}</div>;
-}
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<RoomManagement />} />
+        <Route
+          path="/add-new-room"
+          element={<AddNewRoom rooms={rooms} setRooms={setRooms} />}
+        />
+        <Route
+          path="/show-all-rooms"
+          element={<ShowAllRooms rooms={rooms} />}
+        />
+        <Route
+          path="/edit-room"
+          element={<EditRoom rooms={rooms} setRooms={setRooms} />}
+        />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;

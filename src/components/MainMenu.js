@@ -12,6 +12,8 @@ const MainMenu = ({ setSection }) => {
         className="main-menu-image"
       />
 
+      <text>Select an area to manage:</text>
+
       <nav>
         <ul>
           <li className="menu-button" onClick={() => setSection("rooms")}>
