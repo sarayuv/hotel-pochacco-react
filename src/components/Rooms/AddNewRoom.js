@@ -34,7 +34,8 @@ const AddNewRoom = ({ rooms, setRooms, setSection }) => {
   };
 
   return (
-    <div>
+    <div className="add-new-room-container">
+      <h1>Hotel Pochacco Management System</h1>
       <h3>Add New Room</h3>
       <input
         type="text"
