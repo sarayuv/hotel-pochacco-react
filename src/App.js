@@ -9,6 +9,7 @@ import AddNewGuest from "./components/Guests/AddNewGuest";
 import ShowAllGuests from "./components/Guests/ShowAllGuests";
 import EditGuest from "./components/Guests/EditGuest";
 import ReservationManagement from "./components/Reservations/ReservationManagement";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
 
   return (
     <Router>
+      <Navbar />
       <Routes>
         {/* Routes for Room Management */}
         <Route path="/" element={<RoomManagement />} />
@@ -51,6 +53,8 @@ const App = () => {
 
         {/* Routes for Reservation Management */}
         <Route path="/" element={<ReservationManagement />} />
+
+        {/* Routes for Employee Management */}
       </Routes>
     </Router>
   );

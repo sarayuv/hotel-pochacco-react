@@ -3,6 +3,7 @@ import AddNewRoom from "./AddNewRoom";
 import ShowAllRooms from "./ShowAllRooms";
 import EditRoom from "./EditRoom";
 import MainMenu from "../MainMenu";
+import Navbar from "../Navbar";
 import "../../styles/Rooms/RoomManagement.css";
 
 const RoomManagement = () => {
@@ -15,7 +16,6 @@ const RoomManagement = () => {
 
       {section === "rooms" && (
         <>
-          <h1>Hotel Pochacco Management System</h1>
           <h2>Room Management</h2>
 
           <img
