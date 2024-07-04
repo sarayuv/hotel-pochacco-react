@@ -1,27 +1,104 @@
 import React, { useState } from "react";
-import "../styles/GuestManagement.css";
+import AddNewGuest from "./AddNewGuest";
+import ShowAllGuests from "./ShowAllGuests";
+import SearchGuestByName from "./SearchGuestByName";
+import EditGuest from "./EditGuest";
+import MainMenu from "../MainMenu";
+import "../../styles/Guests/GuestManagement.css";
 
-class Guest {
-  constructor(id, firstName, lastName, email) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.email = email;
-  }
+const GuestManagement = () => {
+  const [section, setSection] = useState("main");
+  const [guests, setGuests] = useState([]);
 
-  getName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
+  return (
+    <div className="guest-management">
+      {section === "main" && <MainMenu setSection={setSection} />}
 
-  print() {
-    console.log(`Guest ID: ${this.id}`);
-    console.log(`Guest First Name: ${this.firstName}`);
-    console.log(`Guest Last Name: ${this.lastName}`);
-    console.log(`Guest Email: ${this.email}`);
-  }
-}
+      {section === "guests" && (
+        <>
+          <h1>Hotel Pochacco Management System</h1>
+          <h2>Guest Management</h2>
 
-const ManageGuests = {
+          <img
+            src={`${process.env.PUBLIC_URL}/images/guest_pochaco.jpg`}
+            alt="Guest Pochacco"
+            className="guest-image"
+          />
+
+          <nav>
+            <ul>
+              <li
+                className="choice-button"
+                onClick={() => setSection("addNewGuest")}
+              >
+                Add New Guest
+              </li>
+
+              <li
+                className="choice-button"
+                onClick={() => setSection("showAllGuests")}
+              >
+                Show All Guests
+              </li>
+
+              <li
+                className="choice-button"
+                onClick={() => setSection("searchGuestByName")}
+              >
+                Search Guest By Name
+              </li>
+
+              <li
+                className="choice-button"
+                onClick={() => setSection("editGuest")}
+              >
+                Edit Guest Data
+              </li>
+            </ul>
+          </nav>
+          <ul>
+            {section === "guests" && (
+              <li
+                className="main-menu-button"
+                onClick={() => setSection("main")}
+              >
+                Back to Main Menu
+              </li>
+            )}
+          </ul>
+        </>
+      )}
+
+      {section === "addNewGuest" && (
+        <AddNewGuest
+          guests={guests}
+          setGuests={setGuests}
+          setSection={setSection}
+        />
+      )}
+
+      {section === "showAllGuests" && (
+        <ShowAllGuests guests={guests} setGuests={setGuests} />
+      )}
+
+      {section === "searchGuestByName" && (
+        <SearchGuestByName guests={guests} setGuests={setGuests} />
+      )}
+
+      {section === "editGuest" && (
+        <EditGuest
+          guests={guests}
+          setGuests={setGuests}
+          setSection={setSection}
+        />
+      )}
+    </div>
+  );
+};
+
+export default GuestManagement;
+
+/* const ManageGuests = {
   addNewGuest: (guests, firstName, lastName, email) => {
     const newGuest = new Guest(guests.length + 1, firstName, lastName, email);
     guests.push(newGuest);
@@ -255,3 +332,4 @@ const GuestManagement = ({ setSection }) => {
 };
 
 export default GuestManagement;
+ */

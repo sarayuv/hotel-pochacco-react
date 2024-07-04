@@ -32,12 +32,14 @@ const RoomManagement = () => {
               >
                 Add New Room
               </li>
+
               <li
                 className="choice-button"
                 onClick={() => setSection("showAllRooms")}
               >
                 Show All Rooms
               </li>
+
               <li
                 className="choice-button"
                 onClick={() => setSection("editRoom")}
