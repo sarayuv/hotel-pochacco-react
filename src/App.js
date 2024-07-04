@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import RoomManagement from "./components/RoomManagement";
-import AddNewRoom from "./components/AddNewRoom";
-import ShowAllRooms from "./components/ShowAllRooms";
-import EditRoom from "./components/EditRoom";
+import RoomManagement from "./components/Rooms/RoomManagement";
+import AddNewRoom from "./components/Rooms/AddNewRoom";
+import ShowAllRooms from "./components/Rooms/ShowAllRooms";
+import EditRoom from "./components/Rooms/EditRoom";
 import "./App.css";
 
 const App = () => {
