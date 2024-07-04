@@ -1,28 +1,28 @@
 import React, { useState } from "react";
-//import "./ReservationManagement.css";
+import MainMenu from "../MainMenu";
+import "../../styles/Reservations/ReservationManagement.css";
 
-class Reservation {
-  constructor(arrival, departure, price, status, guest, room) {
-    this.arrival = arrival;
-    this.departure = departure;
-    this.price = price;
-    this.status = status;
-    this.guest = guest;
-    this.room = room;
-  }
+const ReservationManagement = () => {
+  const [section, setSection] = useState("main");
+  const [reservations, setReservations] = useState([]);
 
-  print() {
-    console.log("\n***********************************");
-    console.log("Arrival Date: " + this.arrival);
-    console.log("Departure Date: " + this.departure);
-    console.log("Guest Name: " + this.guest.getName());
-    console.log("Room ID: " + this.room.getId());
-    console.log("Price: " + this.price);
-    console.log("Status: " + this.status);
-    console.log("***********************************\n");
-  }
-}
+  return (
+    <div className="reservation-management">
+      {section === "main" && <MainMenu setSection={setSection} />}
 
+      {section === "reservations" && (
+        <>
+          <h1>Hotel Pochacco Management System</h1>
+          <h2>Reservation Management</h2>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default ReservationManagement;
+
+/* 
 const ReservationManagement = ({ guests, rooms, reservations, setSection }) => {
   const [reservationForm, setReservationForm] = useState({
     arrival: "",
@@ -176,3 +176,4 @@ const ReservationManagement = ({ guests, rooms, reservations, setSection }) => {
 };
 
 export default ReservationManagement;
+ */

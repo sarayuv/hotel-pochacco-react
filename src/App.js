@@ -4,15 +4,17 @@ import RoomManagement from "./components/Rooms/RoomManagement";
 import AddNewRoom from "./components/Rooms/AddNewRoom";
 import ShowAllRooms from "./components/Rooms/ShowAllRooms";
 import EditRoom from "./components/Rooms/EditRoom";
-import GuestManagement from "./components/Guests/GuestManagement"; // Import GuestManagement component
-import AddNewGuest from "./components/Guests/AddNewGuest"; // Import AddNewGuest component
-import ShowAllGuests from "./components/Guests/ShowAllGuests"; // Import ShowAllGuests component
-import EditGuest from "./components/Guests/EditGuest"; // Import EditGuest component
+import GuestManagement from "./components/Guests/GuestManagement";
+import AddNewGuest from "./components/Guests/AddNewGuest";
+import ShowAllGuests from "./components/Guests/ShowAllGuests";
+import EditGuest from "./components/Guests/EditGuest";
+import ReservationManagement from "./components/Reservations/ReservationManagement";
 import "./App.css";
 
 const App = () => {
   const [rooms, setRooms] = useState([]);
-  const [guests, setGuests] = useState([]); // Initialize guests state
+  const [guests, setGuests] = useState([]);
+  const [reservations, setReservations] = useState([]);
 
   return (
     <Router>
@@ -33,10 +35,7 @@ const App = () => {
         />
 
         {/* Routes for Guest Management */}
-        <Route
-          path="/guests"
-          element={<GuestManagement guests={guests} setGuests={setGuests} />}
-        />
+        <Route path="/" element={<GuestManagement />} />
         <Route
           path="/add-new-guest"
           element={<AddNewGuest guests={guests} setGuests={setGuests} />}
@@ -49,6 +48,9 @@ const App = () => {
           path="/edit-guest"
           element={<EditGuest guests={guests} setGuests={setGuests} />}
         />
+
+        {/* Routes for Reservation Management */}
+        <Route path="/" element={<ReservationManagement />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,72 @@
+.reservation-management {
+  text-align: center;
+}
+
+.reservation-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.choice-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #f19c79; /* button background color */
+  color: white; /* button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.choice-button:hover {
+  background-color: #a44a3f; /* background color on hover */
+}
+
+.choice-button:active {
+  background-color: #a44a3f; /* background color on click */
+}
+
+.reservation-menu-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #f19c79; /* button background color */
+  color: white; /* button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reservation-menu-button:hover {
+  background-color: #a44a3f;
+}
+
+.reservation-menu-button:active {
+  background-color: #a44a3f;
+}
+
+.main-menu-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #f19c79; /* button background color */
+  color: white; /* button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.main-menu-button:hover {
+  background-color: #a44a3f;
+}
+
+.main-menu-button:active {
+  background-color: #a44a3f;
+}
