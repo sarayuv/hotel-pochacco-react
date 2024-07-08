@@ -1,11 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
-const Navbar = ({ setSection }) => {
-  const handleButtonClick = (section) => {
-    setSection(section);
-  };
-
+const Navbar = () => {
   return (
     <div className="navbar">
       <div className="logo">
@@ -19,33 +16,20 @@ const Navbar = ({ setSection }) => {
 
       <nav>
         <ul className="menu-items">
-          <li className="menu-item" onClick={() => handleButtonClick("rooms")}>
-            Rooms
+          <li className="menu-item">
+            <Link to="/rooms">Rooms</Link>
           </li>
-
-          <li className="menu-item" onClick={() => handleButtonClick("guests")}>
-            Guests
+          <li className="menu-item">
+            <Link to="/guests">Guests</Link>
           </li>
-
-          <li
-            className="menu-item"
-            onClick={() => handleButtonClick("reservations")}
-          >
-            Reservations
+          <li className="menu-item">
+            <Link to="/reservations">Reservations</Link>
           </li>
-
-          <li
-            className="menu-item"
-            onClick={() => handleButtonClick("employees")}
-          >
-            Employees
+          <li className="menu-item">
+            <Link to="/employees">Employees</Link>
           </li>
-
-          <li
-            className="menu-item"
-            onClick={() => handleButtonClick("credits")}
-          >
-            Credits
+          <li className="menu-item">
+            <Link to="/credits">Credits</Link>
           </li>
         </ul>
       </nav>
