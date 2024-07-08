@@ -1,26 +1,28 @@
 import React, { useState } from "react";
-import "../styles/EmployeeManagement.css";
+import MainMenu from "../MainMenu";
+import Navbar from "../Navbar";
+import "../../styles/Employees/EmployeeManagement.css";
 
-class Employee {
-  constructor(id, firstName, lastName, position, salary) {
-    this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.position = position;
-    this.salary = salary;
-  }
+const EmployeeManagement = () => {
+  const [section, setSection] = useState("main");
+  const [employees, setEmployees] = useState([]);
 
-  print() {
-    console.log(`Employee ID: ${this.id}`);
-    console.log(`Employee First Name: ${this.firstName}`);
-    console.log(`Employee Last Name: ${this.lastName}`);
-    console.log(`Employee Position: ${this.position}`);
-    console.log(`Employee Salary: ${this.salary}`);
-    console.log("--------------------------------");
-  }
-}
+  return (
+    <div className="employee-management">
+      {section === "main" && <MainMenu setSection={setSection} />}
 
-const EmployeeManagement = ({ setSection }) => {
+      {section === "rooms" && (
+        <>
+          <h2>Room Management</h2>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default EmployeeManagement;
+
+/* const EmployeeManagement = ({ setSection }) => {
   const [employees, setEmployees] = useState([]);
   const [employeeForm, setEmployeeForm] = useState({
     firstName: "",
@@ -239,3 +241,4 @@ const EmployeeManagement = ({ setSection }) => {
 };
 
 export default EmployeeManagement;
+ */
