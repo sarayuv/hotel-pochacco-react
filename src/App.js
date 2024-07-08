@@ -9,6 +9,8 @@ import AddNewGuest from "./components/Guests/AddNewGuest";
 import ShowAllGuests from "./components/Guests/ShowAllGuests";
 import EditGuest from "./components/Guests/EditGuest";
 import ReservationManagement from "./components/Reservations/ReservationManagement";
+import EmployeeManagement from "./components/Employees/EmployeeManagement";
+import Credits from "./components/Credits";
 import Navbar from "./components/Navbar";
 import "./App.css";
 
@@ -22,7 +24,7 @@ const App = () => {
       <Navbar />
       <Routes>
         {/* Routes for Room Management */}
-        <Route path="/" element={<RoomManagement />} />
+        <Route path="/rooms" element={<RoomManagement />} />
         <Route
           path="/add-new-room"
           element={<AddNewRoom rooms={rooms} setRooms={setRooms} />}
@@ -37,7 +39,7 @@ const App = () => {
         />
 
         {/* Routes for Guest Management */}
-        <Route path="/" element={<GuestManagement />} />
+        <Route path="/guests" element={<GuestManagement />} />
         <Route
           path="/add-new-guest"
           element={<AddNewGuest guests={guests} setGuests={setGuests} />}
@@ -52,9 +54,13 @@ const App = () => {
         />
 
         {/* Routes for Reservation Management */}
-        <Route path="/" element={<ReservationManagement />} />
+        <Route path="/reservations" element={<ReservationManagement />} />
 
         {/* Routes for Employee Management */}
+        <Route path="/employees" element={<EmployeeManagement />} />
+
+        {/* Route for Credits */}
+        <Route path="/credits" element={<Credits />} />
       </Routes>
     </Router>
   );
