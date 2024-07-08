@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../../styles/Rooms/AddNewRoom.css";
 
 const EditRoom = ({ room, rooms, setRooms, setSection }) => {
@@ -97,8 +98,8 @@ const EditRoom = ({ room, rooms, setRooms, setSection }) => {
       <button onClick={updateRoom}>Update Room</button>
 
       <ul>
-        <li className="room-menu-button" onClick={() => setSection("rooms")}>
-          Back to Room Menu
+        <li className="room-menu-button">
+          <Link to="../rooms">Back to Room Menu</Link>
         </li>
       </ul>
     </div>

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Room from "./Room";
 import "../../styles/Rooms/AddNewRoom.css";
 
-const AddNewRoom = ({ rooms, setRooms, setSection }) => {
+const AddNewRoom = ({ rooms, setRooms }) => {
   const [roomForm, setRoomForm] = useState({
     floor: "",
     capacity: "",
@@ -35,7 +36,6 @@ const AddNewRoom = ({ rooms, setRooms, setSection }) => {
 
   return (
     <div className="add-new-room-container">
-      <h1>Hotel Pochacco Management System</h1>
       <h3>Add New Room</h3>
       <input
         type="text"
@@ -65,12 +65,14 @@ const AddNewRoom = ({ rooms, setRooms, setSection }) => {
         value={roomForm.price}
         onChange={handleInputChange}
       />
+
       <br />
+
       <button onClick={addNewRoom}>Add Room</button>
 
       <ul>
-        <li className="room-menu-button" onClick={() => setSection("rooms")}>
-          Back to Room Menu
+        <li className="room-menu-button">
+          <Link to="../rooms">Back to Room Menu</Link>
         </li>
       </ul>
     </div>

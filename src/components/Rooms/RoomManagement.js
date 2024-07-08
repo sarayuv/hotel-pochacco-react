@@ -9,6 +9,7 @@ const RoomManagement = ({ rooms, setRooms }) => {
   return (
     <div className="room-management">
       <h2>Room Management</h2>
+
       <img
         src={`${process.env.PUBLIC_URL}/images/hotel-room.jpg`}
         alt="Hotel Room"

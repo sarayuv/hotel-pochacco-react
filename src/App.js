@@ -33,15 +33,15 @@ const App = () => {
           element={<RoomManagement rooms={rooms} setRooms={setRooms} />}
         />
         <Route
-          path="/add-new-room"
+          path="rooms/add-new-room"
           element={<AddNewRoom rooms={rooms} setRooms={setRooms} />}
         />
         <Route
-          path="/show-all-rooms"
+          path="rooms/show-all-rooms"
           element={<ShowAllRooms rooms={rooms} />}
         />
         <Route
-          path="/edit-room"
+          path="rooms/edit-room"
           element={<EditRoom rooms={rooms} setRooms={setRooms} />}
         />
 
@@ -51,11 +51,11 @@ const App = () => {
           element={<GuestManagement guests={guests} setGuests={setGuests} />}
         />
         <Route
-          path="/add-new-guest"
+          path="guests/add-new-guest"
           element={<AddNewGuest guests={guests} setGuests={setGuests} />}
         />
         <Route
-          path="/show-all-guests"
+          path="guests/show-all-guests"
           element={<ShowAllGuests guests={guests} />}
         />
         <Route
@@ -78,7 +78,7 @@ const App = () => {
         <Route
           path="employees"
           element={
-            <GuestManagement
+            <EmployeeManagement
               employees={employees}
               setEmployees={setEmployees}
             />

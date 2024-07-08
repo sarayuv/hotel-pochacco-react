@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Guest from "./Guest";
 import "../../styles/Guests/AddNewGuest.css";
 
-const AddNewGuest = ({ guests, setGuests, setSection }) => {
+const AddNewGuest = ({ guests, setGuests }) => {
   const [guestForm, setGuestForm] = useState({
     firstName: "",
     lastName: "",
@@ -33,7 +34,6 @@ const AddNewGuest = ({ guests, setGuests, setSection }) => {
 
   return (
     <div className="add-new-guest-container">
-      <h1>Hotel Pochacco Management System</h1>
       <h3>Add New Guest</h3>
 
       <input
@@ -62,14 +62,11 @@ const AddNewGuest = ({ guests, setGuests, setSection }) => {
 
       <br />
 
-      <button onClick={addNewGuest}>AddNewGuest</button>
+      <button onClick={addNewGuest}>Add Guest</button>
 
       <ul>
-        <li
-          className="guest-menu-button"
-          onClick={() => SVGComponentTransferFunctionElement("guests")}
-        >
-          Back to Guest Menu
+        <li className="guest-menu-button">
+          <Link to="../guests">Back to Guest Menu</Link>
         </li>
       </ul>
     </div>
