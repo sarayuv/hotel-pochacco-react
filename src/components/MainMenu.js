@@ -1,28 +1,28 @@
 import React from "react";
-import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 import "../styles/MainMenu.css";
 
-const MainMenu = ({ setSection }) => {
+const MainMenu = () => {
   return (
-    <div>
+    <div className="main-menu">
       <img
         src={`${process.env.PUBLIC_URL}/images/pochacco.png`}
         alt="Pochacco"
         className="main-menu-image"
       />
 
-      <ul className="main-page-buttons">
-        <li className="menu-button" onClick={() => setSection("rooms")}>
-          Rooms
+      <ul>
+        <li className="menu-button">
+          <Link to="rooms">Rooms</Link>
         </li>
-        <li className="menu-button" onClick={() => setSection("guests")}>
-          Guests
+        <li className="menu-button">
+          <Link to="guests">Guests</Link>
         </li>
-        <li className="menu-button" onClick={() => setSection("reservations")}>
-          Reservations
+        <li className="menu-button">
+          <Link to="reservations">Reservations</Link>
         </li>
-        <li className="menu-button" onClick={() => setSection("employees")}>
-          Employees
+        <li className="menu-button">
+          <Link to="employees">Employees</Link>
         </li>
       </ul>
     </div>

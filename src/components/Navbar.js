@@ -11,7 +11,9 @@ const Navbar = () => {
           alt="Logo"
           className="logo-image"
         />
-        <h1 className="title">Hotel Pochacco Management System</h1>
+        <h1 className="title">
+          <Link to="/">Hotel Pochacco Management System</Link>
+        </h1>
       </div>
 
       <nav>

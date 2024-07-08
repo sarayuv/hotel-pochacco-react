@@ -1,78 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link, Route, Routes } from "react-router-dom";
 import AddNewRoom from "./AddNewRoom";
 import ShowAllRooms from "./ShowAllRooms";
 import EditRoom from "./EditRoom";
-import MainMenu from "../MainMenu";
-import Navbar from "../Navbar";
 import "../../styles/Rooms/RoomManagement.css";
 
-const RoomManagement = () => {
-  const [section, setSection] = useState("main");
-  const [rooms, setRooms] = useState([]);
-
+const RoomManagement = ({ rooms, setRooms }) => {
   return (
     <div className="room-management">
-      {section === "main" && <MainMenu setSection={setSection} />}
+      <h2>Room Management</h2>
+      <img
+        src={`${process.env.PUBLIC_URL}/images/hotel-room.jpg`}
+        alt="Hotel Room"
+        className="room-image"
+      />
 
-      {section === "rooms" && (
-        <>
-          <h2>Room Management</h2>
+      <nav>
+        <ul>
+          <li className="choice-button">
+            <Link to="add-new-room">Add New Room</Link>
+          </li>
+          <li className="choice-button">
+            <Link to="show-all-rooms">Show All Rooms</Link>
+          </li>
+          <li className="choice-button">
+            <Link to="edit-room">Edit Room Data</Link>
+          </li>
+        </ul>
+      </nav>
+      <nav>
+        <ul>
+          <li className="main-menu-button">
+            <Link to="/">Back to Main Menu</Link>
+          </li>
+        </ul>
+      </nav>
 
-          <img
-            src={`${process.env.PUBLIC_URL}/images/hotel-room.jpg`}
-            alt="Hotel Room"
-            className="room-image"
-          />
-
-          <nav>
-            <ul>
-              <li
-                className="choice-button"
-                onClick={() => setSection("addNewRoom")}
-              >
-                Add New Room
-              </li>
-
-              <li
-                className="choice-button"
-                onClick={() => setSection("showAllRooms")}
-              >
-                Show All Rooms
-              </li>
-
-              <li
-                className="choice-button"
-                onClick={() => setSection("editRoom")}
-              >
-                Edit Room Data
-              </li>
-            </ul>
-          </nav>
-
-          <ul>
-            {section === "rooms" && (
-              <li
-                className="main-menu-button"
-                onClick={() => setSection("main")}
-              >
-                Back to Main Menu
-              </li>
-            )}
-          </ul>
-        </>
-      )}
-
-      {section === "addNewRoom" && (
-        <AddNewRoom rooms={rooms} setRooms={setRooms} setSection={setSection} />
-      )}
-
-      {section === "showAllRooms" && (
-        <ShowAllRooms rooms={rooms} setSection={setSection} />
-      )}
-
-      {section === "editRoom" && (
-        <EditRoom rooms={rooms} setRooms={setRooms} setSection={setSection} />
-      )}
+      <Routes>
+        <Route
+          path="add-new-room"
+          element={<AddNewRoom rooms={rooms} setRooms={setRooms} />}
+        />
+        <Route path="show-all-rooms" element={<ShowAllRooms rooms={rooms} />} />
+        <Route
+          path="edit-room"
+          element={<EditRoom rooms={rooms} setRooms={setRooms} />}
+        />
+      </Routes>
     </div>
   );
 };

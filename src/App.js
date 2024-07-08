@@ -12,19 +12,26 @@ import ReservationManagement from "./components/Reservations/ReservationManageme
 import EmployeeManagement from "./components/Employees/EmployeeManagement";
 import Credits from "./components/Credits";
 import Navbar from "./components/Navbar";
+import MainMenu from "./components/MainMenu";
 import "./App.css";
 
 const App = () => {
   const [rooms, setRooms] = useState([]);
   const [guests, setGuests] = useState([]);
   const [reservations, setReservations] = useState([]);
+  const [employees, setEmployees] = useState([]);
 
   return (
     <Router>
       <Navbar />
       <Routes>
+        <Route path="/" element={<MainMenu />} />
+
         {/* Routes for Room Management */}
-        <Route path="/rooms" element={<RoomManagement />} />
+        <Route
+          path="rooms"
+          element={<RoomManagement rooms={rooms} setRooms={setRooms} />}
+        />
         <Route
           path="/add-new-room"
           element={<AddNewRoom rooms={rooms} setRooms={setRooms} />}
@@ -39,7 +46,10 @@ const App = () => {
         />
 
         {/* Routes for Guest Management */}
-        <Route path="/guests" element={<GuestManagement />} />
+        <Route
+          path="guests"
+          element={<GuestManagement guests={guests} setGuests={setGuests} />}
+        />
         <Route
           path="/add-new-guest"
           element={<AddNewGuest guests={guests} setGuests={setGuests} />}
@@ -54,13 +64,29 @@ const App = () => {
         />
 
         {/* Routes for Reservation Management */}
-        <Route path="/reservations" element={<ReservationManagement />} />
+        <Route
+          path="reservations"
+          element={
+            <ReservationManagement
+              reservations={reservations}
+              setReservations={setReservations}
+            />
+          }
+        />
 
         {/* Routes for Employee Management */}
-        <Route path="/employees" element={<EmployeeManagement />} />
+        <Route
+          path="employees"
+          element={
+            <GuestManagement
+              employees={employees}
+              setEmployees={setEmployees}
+            />
+          }
+        />
 
         {/* Route for Credits */}
-        <Route path="/credits" element={<Credits />} />
+        <Route path="credits" element={<Credits />} />
       </Routes>
     </Router>
   );
