@@ -7,6 +7,10 @@ class Employee {
     this.salary = salary;
   }
 
+  getName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
   print() {
     console.log(`Employee ID: ${this.id}`);
     console.log(`Employee First Name: ${this.firstName}`);
