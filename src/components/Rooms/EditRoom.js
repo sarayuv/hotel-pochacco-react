@@ -73,6 +73,7 @@ const EditRoom = ({ room, rooms, setRooms, setSection }) => {
         value={roomForm.floor}
         onChange={handleInputChange}
       />
+
       <input
         type="number"
         name="capacity"
@@ -80,6 +81,7 @@ const EditRoom = ({ room, rooms, setRooms, setSection }) => {
         value={roomForm.capacity}
         onChange={handleInputChange}
       />
+
       <input
         type="text"
         name="description"
@@ -87,6 +89,7 @@ const EditRoom = ({ room, rooms, setRooms, setSection }) => {
         value={roomForm.description}
         onChange={handleInputChange}
       />
+
       <input
         type="number"
         name="price"
