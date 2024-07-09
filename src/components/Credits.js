@@ -55,6 +55,24 @@ const Credits = () => {
             https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYskFEVu8ideNoCEd8j-abk7MhfMvReHZtu9uurvmy6kezd1uP
           </a>
         </li>
+        <li>
+          <a
+            href="https://i0.wp.com/yumetwinsblog.wpcomstaging.com/wp-content/uploads/2024/04/pochacco-thumbnail.webp?fit=1024%2C599&ssl=1"
+            target="_blank"
+            rel="noopener noreffered"
+          >
+            https://i0.wp.com/yumetwinsblog.wpcomstaging.com/wp-content/uploads/2024/04/pochacco-thumbnail.webp?fit=1024%2C599&ssl=1
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://i0.wp.com/yumetwinsblog.wpcomstaging.com/wp-content/uploads/2024/04/pochacco-1.webp?resize=620%2C465&ssl=1"
+            target="_blank"
+            rel="noopener noreffered"
+          >
+            https://i0.wp.com/yumetwinsblog.wpcomstaging.com/wp-content/uploads/2024/04/pochacco-1.webp?resize=620%2C465&ssl=1
+          </a>
+        </li>
       </ul>
     </div>
   );

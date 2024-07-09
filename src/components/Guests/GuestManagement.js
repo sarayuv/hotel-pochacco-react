@@ -12,7 +12,7 @@ const GuestManagement = ({ guests, setGuests }) => {
       <h2>Guest Management</h2>
 
       <img
-        src={`${process.env.PUBLIC_URL}/images/guest_pochaco.jpg`}
+        src={`${process.env.PUBLIC_URL}/images/guest_pochacco.jpg`}
         alt="Guest Pochacco"
         className="guest-pochacco"
       />

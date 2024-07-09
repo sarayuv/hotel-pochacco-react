@@ -10,6 +10,12 @@ const EmployeeManagement = ({ employees, setEmployees }) => {
     <div className="employee-management">
       <h2>Employee Management</h2>
 
+      <img
+        src={`${process.env.PUBLIC_URL}/images/employee_pochacco.png`}
+        alt="Employee Pochacco"
+        className="employee_pochacco"
+      />
+
       <nav>
         <ul>
           <li className="choice-button">
