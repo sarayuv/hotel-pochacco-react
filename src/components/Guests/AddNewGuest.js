@@ -5,6 +5,7 @@ import "../../styles/Guests/AddNewGuest.css";
 
 const AddNewGuest = ({ guests, setGuests }) => {
   const [guestForm, setGuestForm] = useState({
+    id: "",
     firstName: "",
     lastName: "",
     email: "",

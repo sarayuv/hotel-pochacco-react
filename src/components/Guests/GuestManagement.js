@@ -69,12 +69,6 @@ const GuestManagement = ({ guests, setGuests }) => {
 export default GuestManagement;
 
 /* const ManageGuests = {
-  addNewGuest: (guests, firstName, lastName, email) => {
-    const newGuest = new Guest(guests.length + 1, firstName, lastName, email);
-    guests.push(newGuest);
-    console.log("Guest added successfully!");
-  },
-
   showAllGuests: (guests) => {
     guests.forEach((guest) => guest.print());
   },
